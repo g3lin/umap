@@ -1,5 +1,5 @@
 L.U.FeatureMixin = {
-  staticOptions: {},
+  staticOptions: {mainColor: 'color'},
 
   initialize: function (map, latlng, options) {
     this.map = map
@@ -1032,6 +1032,9 @@ L.U.Polyline = L.Polyline.extend({
 L.U.Polygon = L.Polygon.extend({
   parentClass: L.Polygon,
   includes: [L.U.FeatureMixin, L.U.PathMixin],
+  staticOptions: {
+    mainColor: 'fillColor',
+  },
 
   isSameClass: function (other) {
     return other instanceof L.U.Polygon
